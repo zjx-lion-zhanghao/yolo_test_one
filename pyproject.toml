@@ -1,0 +1,12 @@
+[project]
+name = "yolo-test-document"
+version = "0.1.0"
+description = "Project-owned YOLO training and inference workflow separated from the upstream Ultralytics source tree."
+requires-python = ">=3.10"
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py310"

@@ -1,0 +1,24 @@
+# 默认训练参数模板。
+#
+# 说明：
+# - 这个文件给人读和做实验记录用；实际训练入口是
+#   `python -m yolo_test.training.train_yolo`。
+# - 真正被 Ultralytics 读取的数据集信息在 `configs/datasets/*.yaml`。
+# - 输出目录统一固定为 `artifacts/runs`，避免训练结果再次混入官方仓库。
+
+data: configs/datasets/circle_cqu.yaml
+model: models/pretrained/yolov8n.pt
+name: circle_yolov8n
+
+epochs: 200
+imgsz: 640
+batch: 16
+workers: 8
+device: "0"
+optimizer: SGD
+
+# AMP 在部分显卡/驱动组合上可能不稳定；默认关闭，确认环境稳定后再开启。
+amp: false
+
+# cache 会占用更多磁盘/内存，但重复训练时可以减少数据读取时间。
+cache: false

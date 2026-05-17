@@ -1,0 +1,44 @@
+.DS_Store
+__pycache__/
+.pycache_build/
+*.py[cod]
+.venv/
+.idea/
+.vscode/
+.pytest_cache/
+.ruff_cache/
+
+# Local datasets and generated training outputs.
+/datasets/
+/artifacts/*
+!artifacts/README.md
+!artifacts/runs/
+/artifacts/runs/*
+!artifacts/runs/README.md
+
+# Historical local-only leftovers.
+legacy/tmp/
+legacy/ide_metadata/
+legacy/local_envs/
+legacy/old_nested_layout/
+
+# Model weights are usually large binary files. Keep the directories documented,
+# but store actual weights outside Git or publish them through GitHub Releases.
+*.pt
+*.onnx
+*.engine
+*.torchscript
+*.tflite
+models/pretrained/*.pt
+models/trained/*.pt
+!models/pretrained/README.md
+!models/trained/README.md
+
+# Keep the vendored upstream source visible but avoid local environments inside it.
+vendor/ultralytics/.venv*/
+vendor/ultralytics/.github/
+vendor/ultralytics/docker/
+vendor/ultralytics/docs/
+vendor/ultralytics/examples/
+vendor/ultralytics/tests/
+vendor/ultralytics/ultralytics/assets/

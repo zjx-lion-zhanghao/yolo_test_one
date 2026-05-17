@@ -1,0 +1,23 @@
+# YOLO 数据集配置：middle 单类别检测任务。
+#
+# 这份配置来自旧版 `circle.yaml`，保留了原始 Windows 数据路径和调参记录。
+# 若迁移到新机器，优先只改路径，不要随意改变 `names` 的顺序。
+
+train: C:/Users/78456/Desktop/data/VOCdevkit/train/images
+val: C:/Users/78456/Desktop/data/VOCdevkit/val/images
+test: C:/Users/78456/Desktop/data/VOCdevkit/test/images
+
+nc: 1
+names: ["middle"]
+
+# 历史实验记录：这些值描述当时的训练设定，建议在训练脚本参数中显式设置。
+training_notes:
+  multi_scale: true
+  scale: 0.5
+  translate: 0.2
+  degrees: 15.0
+  perspective: 0.001
+  box: 8.0
+  cls: 0.8
+  dfl: 1.5
+  patience: 50

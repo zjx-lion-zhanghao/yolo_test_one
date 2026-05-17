@@ -1,0 +1,33 @@
+# YOLO 数据集配置：circle 单类别检测任务。
+#
+# 维护原则：
+# - `train`、`val`、`test` 可以使用绝对路径，也可以改成项目相对路径。
+# - 类别顺序必须和标签 txt 中的 class id 保持一致。这里 `circle` 的 id 是 0。
+# - Ultralytics 的数据集 YAML 主要消费 train/val/test/nc/names。增强参数建议通过
+#   训练命令或训练配置集中管理，避免数据配置同时承担过多职责。
+
+train: C:\Users\CQU-996\Desktop\data\VOCdevkit\train/images
+val: C:\Users\CQU-996\Desktop\data\VOCdevkit\val/images
+test: C:\Users\CQU-996\Desktop\data\VOCdevkit/test/images
+
+nc: 1
+names: ["circle"]
+
+# 历史实验记录：以下增强参数来自旧版 data.yaml。
+# 需要复现实验时，可以把这些值显式传给 Ultralytics 训练参数。
+augmentation_notes:
+  hsv_h: 0.02
+  hsv_s: 0.8
+  hsv_v: 0.5
+  degrees: 15.0
+  translate: 0.2
+  scale: 0.75
+  shear: 8.0
+  perspective: 0.001
+  flipud: 0.2
+  fliplr: 0.6
+  mosaic: 1.0
+  mixup: 0.2
+  copy_paste: 0.1
+  auto_augment: rand-m9-mstd0.5
+  erasing: 0.1
